@@ -1,0 +1,115 @@
+/* Chat Room Container */
+.chatRoom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+  }
+  
+ /* Chat Box */
+.chatBox {
+    width: 400px;
+    height: 600px;
+    background-color: #1a1a1a; /* Dark gray */
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1), 0 10px 20px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: perspective(1000px) rotateX(10deg) rotateY(0deg); /* Balanced rotation */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .chatBox:hover {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg); /* Reset rotation on hover */
+    box-shadow: 0 30px 60px rgba(255, 255, 255, 0.2), 0 15px 30px rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Messages Container */
+  .messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #555 #1a1a1a; /* Custom scrollbar */
+  }
+  
+  .messages::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .messages::-webkit-scrollbar-thumb {
+    background-color: #555; /* Scrollbar thumb */
+    border-radius: 4px;
+  }
+  
+  .messages::-webkit-scrollbar-track {
+    background-color: #1a1a1a; /* Scrollbar track */
+  }
+  
+  /* Individual Messages */
+  .message {
+    background-color: #333; /* Dark gray */
+    color: #fff; /* White text */
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    max-width: 70%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .message:hover {
+    transform: translateY(-2px); /* Lift effect on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+  }
+  
+  .message:nth-child(even) {
+    background-color: #444; /* Slightly lighter gray */
+    align-self: flex-end;
+  }
+  
+  /* Input Container */
+  .inputContainer {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    background-color: #1a1a1a; /* Dark gray */
+    border-top: 1px solid #333; /* Dark gray border */
+  }
+  
+  .inputContainer input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #555; /* Dark gray border */
+    border-radius: 10px;
+    background-color: #333; /* Dark gray */
+    color: #fff; /* White text */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .inputContainer input:focus {
+    border-color: #fff; /* White border on focus */
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2); /* Glow effect on focus */
+    outline: none;
+  }
+  
+  .inputContainer button {
+    padding: 10px 20px;
+    background-color: #fff; /* White */
+    color: #000; /* Black text */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .inputContainer button:hover {
+    background-color: #f0f0f0; /* Light gray hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+  }
+  
+  .inputContainer button:active {
+    transform: translateY(0); /* Reset lift effect on click */
+  }
