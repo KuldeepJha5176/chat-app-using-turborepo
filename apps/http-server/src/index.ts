@@ -1,12 +1,21 @@
-import express = require('express');
-
+import express from "express";
 
 const app = express();
 
-app.get("/", (req, res) => { 
-    res.json({ message: "Hello World!" });
+
+
+app.get("/signup", (req, res) => {
+    res.send("signup");
 });
 
-app.listen(3000, () => {
-    console.log("Server is running on port 3000");
+app.get("/signin", (req, res) => {
+    res.send("signin");
+});
+
+app.get("/chat", (req, res) => {
+    res.send("chat");
+});
+
+app.listen(3001, () => {
+    console.log("Server is running on port 3001");
 });
